@@ -7,7 +7,7 @@
 //1 -3 8 -9
 
 //8 7 -7 9
-
+/*
 Console.WriteLine ("Введите количество строк: ");
 int rows=int.Parse(Console.ReadLine()!);
 
@@ -17,6 +17,43 @@ int columns=int.Parse(Console.ReadLine()!);
 int [,] Array= GetArray(rows,columns,-9,9);
 PrintArray(Array);
 
+
+*/
+
+//Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+//Например, задан массив:
+
+//1 4 7 2
+
+//5 9 2 3
+
+//8 4 2 4
+
+//i = 4, j = 2 -> такого числа в массиве нет
+//i = 1, j = 2 -> 2
+
+Console.WriteLine ("Введите количество строк: ");
+int rows=int.Parse(Console.ReadLine()!);
+
+Console.WriteLine ("Введите количество столбцов: ");
+int columns=int.Parse(Console.ReadLine()!);
+
+int [,] Array2= GetArray(rows,columns,-9,9);
+PrintArray(Array2);
+Console.Write ("i=");
+int i=int.Parse(Console.ReadLine()!);
+
+Console.Write("j=");
+int j=int.Parse(Console.ReadLine()!);
+
+printIJ(Array2,i,j);
+
+void printIJ (int [,] arr, int i, int j)
+{
+    if (i<arr.GetLength(0) && j<arr.GetLength(1)) Console.WriteLine ($" Элемент с индексом ({i},{j})={arr[i,j]}");
+    else Console.WriteLine ($"Элемента с индексом ({i},{j}) нет");
+}
 
 
 
